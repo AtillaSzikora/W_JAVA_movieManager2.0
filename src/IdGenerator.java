@@ -7,4 +7,6 @@ If the product is a Book, the id should start with BOO.
 
 public class IdGenerator {
 
+    static String generatedId = "";
+    public static String generate(Product product) {return generatedId;}
 }
