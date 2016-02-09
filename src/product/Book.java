@@ -1,9 +1,14 @@
-/*
-A Book is a product and has an author. The investment of a book is the salary of the author.
- */
-
 package product;
 
-public class Book {
+import person.Person;
+import main.Product;
 
+public class Book extends Product {
+
+    Person author;
+
+    public Person getAuthor() {return author;}
+    public void setAuthor(Person author) {this.author = author;}
+    @Override
+    public long getInvestment() {return 0;}
 }
