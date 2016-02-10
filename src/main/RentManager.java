@@ -19,9 +19,6 @@ public class RentManager {
         Person juci = new Person("Ju", "Ci", Gender.FEMALE, 500);
         Person julcsi = new Person("Jul", "Csi", Gender.FEMALE, 600);
 
-        List<Person> book1Author = Arrays.asList(jani);
-        List<Person> book2Author = Arrays.asList(jozsi);
-        List<Person> book3Author = Arrays.asList(jolan);
         List<Person> game1Staff = Arrays.asList(jani, jozsi, jolan, jakab);
         List<Person> game2Staff = Arrays.asList(jolan, jakab, juci, julcsi);
         List<Person> game3Staff = Arrays.asList(jozsi, jolan, jakab, juci);
@@ -29,9 +26,9 @@ public class RentManager {
         List<Person> movie2Cast = Arrays.asList(jozsi, jakab, julcsi);
         List<Person> movie3Cast = Arrays.asList(jakab, juci, julcsi);
 
-        Product book1 = new Book(book1Author);
-        Product book2 = new Book(book2Author);
-        Product book3 = new Book(book3Author);
+        Product book1 = new Book(jani);
+        Product book2 = new Book(jozsi);
+        Product book3 = new Book(jolan);
         Product game1 = new Game(true, game1Staff, 150);
         Product game2 = new Game(false, game2Staff, 250);
         Product game3 = new Game(true, game3Staff, 350);
@@ -40,17 +37,17 @@ public class RentManager {
         Product movie3 = new Movie(Genre.COMEDY, 100, 2, movie3Cast, 650);
 
         System.out.println("The total investment for games is: "
-                + (game1.getInvestment(game1Staff)
-                + game2.getInvestment(game2Staff)
-                + game3.getInvestment(game3Staff)));
+                + (game1.getInvestment()
+                + game2.getInvestment()
+                + game3.getInvestment()));
         System.out.println("The total investment for movies is: "
-                + (movie1.getInvestment(movie1Cast)
-                + movie2.getInvestment(movie2Cast)
-                + movie3.getInvestment(movie3Cast)));
+                + (movie1.getInvestment()
+                + movie2.getInvestment()
+                + movie3.getInvestment()));
         System.out.println("The total investment for books is: "
-                + (book1.getInvestment(book1Author)
-                + book2.getInvestment(book2Author)
-                + book3.getInvestment(book3Author)));
+                + (book1.getInvestment()
+                + book2.getInvestment()
+                + book3.getInvestment()));
 
         System.out.println("\n" + "Book1 ID: " + IdGenerator.generate(book1));
         System.out.println("Book2 ID: " + IdGenerator.generate(book2));

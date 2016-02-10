@@ -2,8 +2,6 @@ package main;
 
 import person.Person;
 
-import java.util.List;
-
 public abstract class Product {
 
     String id;
@@ -12,5 +10,5 @@ public abstract class Product {
 
     public String getTitle() {return title;}
     public Person getRenter() {return renter;}
-    public abstract long getInvestment(List<Person> persons);
+    public abstract long getInvestment();
 }

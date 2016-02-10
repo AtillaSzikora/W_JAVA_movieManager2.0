@@ -4,9 +4,10 @@ import main.Buyable;
 import main.Genre;
 import main.Product;
 import person.Person;
+
 import java.util.List;
 
-public class Movie extends Product implements Buyable{
+public class Movie extends Product implements Buyable {
 
     private Genre genre;
     private long duration;
@@ -19,20 +20,56 @@ public class Movie extends Product implements Buyable{
         this.duration = duration;
         this.rate = rate;
         this.cast = cast;
-        this.price = price; }
+        this.price = price;
+    }
 
-    public Genre getGenre() {return genre;}
-    public void setGenre(Genre genre) {this.genre = genre;}
-    public long getDuration() {return duration;}
-    public void setDuration(long duration) {this.duration = duration;}
-    public double getRate() {return rate;}
-    public void setRate(double rate) {this.rate = rate;}
-    public List<Person> getCast() {return cast;}
-    public void setCast(List<Person> cast) {this.cast = cast;}
-    @Override public int getPrice() {return 0;}
-    public void setPrice(int price) {this.price = price;}
-    @Override public long getInvestment(List<Person> cast) {
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
+
+    public long getDuration() {
+        return duration;
+    }
+
+    public void setDuration(long duration) {
+        this.duration = duration;
+    }
+
+    public double getRate() {
+        return rate;
+    }
+
+    public void setRate(double rate) {
+        this.rate = rate;
+    }
+
+    public List<Person> getCast() {
+        return cast;
+    }
+
+    public void setCast(List<Person> cast) {
+        this.cast = cast;
+    }
+
+    @Override
+    public int getPrice() {
+        return 0;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    @Override
+    public long getInvestment() {
         int salaryOfCast = 0;
-        for(Person c : cast) {salaryOfCast += c.getSalary(); }
-        return salaryOfCast; }
+        for (Person c : this.cast) {
+            salaryOfCast += c.getSalary();
+        }
+        return salaryOfCast;
+    }
 }
