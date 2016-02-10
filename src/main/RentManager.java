@@ -50,7 +50,18 @@ public class RentManager {
         System.out.println("The total investment for books is: "
                 + (book1.getInvestment(book1Author)
                 + book2.getInvestment(book2Author)
-                + book3.getInvestment(book3Author))); }
+                + book3.getInvestment(book3Author)));
+
+        System.out.println("\n" + "Book1 ID: " + IdGenerator.generate(book1));
+        System.out.println("Book2 ID: " + IdGenerator.generate(book2));
+        System.out.println("Book3 ID: " + IdGenerator.generate(book3));
+        System.out.println("\n" + "Game1 ID: " + IdGenerator.generate(game1));
+        System.out.println("Game2 ID: " + IdGenerator.generate(game2));
+        System.out.println("Game3 ID: " + IdGenerator.generate(game3));
+        System.out.println("\n" + "Movie1 ID: " + IdGenerator.generate(movie1));
+        System.out.println("Movie2 ID: " + IdGenerator.generate(movie2));
+        System.out.println("Movie3 ID: " + IdGenerator.generate(movie3));
+    }
 
     public static int totalIncome (List<Buyable> products) {
         int totalIncome = 0;

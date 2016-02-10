@@ -16,7 +16,7 @@ public class IdGenerator {
         if(product instanceof Game) {preFix = "GAM";}
         if(product instanceof Book) {preFix =  "BOO";}
         Random r = new Random();
-        randomNum = r.nextInt(1000 - 100) + 100;
+        randomNum = r.nextInt(10000 - 1000) + 1000;
         String strRandomNum = String.valueOf(randomNum);
         return preFix + strRandomNum; }
 }
