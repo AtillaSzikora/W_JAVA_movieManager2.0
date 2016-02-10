@@ -26,17 +26,17 @@ public class RentManager {
         List<Person> movie2Cast = Arrays.asList(jozsi, jakab, julcsi);
         List<Person> movie3Cast = Arrays.asList(jakab, juci, julcsi);
 
-        Product book1 = new Book(jani);
-        Product book2 = new Book(jozsi);
-        Product book3 = new Book(jolan);
-        Product game1 = new Game(true, game1Staff, 150);
-        Product game2 = new Game(false, game2Staff, 250);
-        Product game3 = new Game(true, game3Staff, 350);
-        Product movie1 = new Movie(Genre.ACTION, 110, 3, movie1Cast, 450);
-        Product movie2 = new Movie(Genre.DRAMA, 120, 4, movie2Cast, 550);
-        Product movie3 = new Movie(Genre.COMEDY, 100, 2, movie3Cast, 650);
+        Book book1 = new Book(jani);
+        Book book2 = new Book(jozsi);
+        Book book3 = new Book(jolan);
+        Game game1 = new Game(true, game1Staff, 150);
+        Game game2 = new Game(false, game2Staff, 250);
+        Game game3 = new Game(true, game3Staff, 350);
+        Movie movie1 = new Movie(Genre.ACTION, 110, 3, movie1Cast, 450);
+        Movie movie2 = new Movie(Genre.DRAMA, 120, 4, movie2Cast, 550);
+        Movie movie3 = new Movie(Genre.COMEDY, 100, 2, movie3Cast, 650);
 
-        List<Buyable> someProducts = Arrays.asList(movie1, game1, movie2, game2);
+        List<Buyable> someProducts = Arrays.asList(movie1, movie2, game2, game3);
 
         System.out.println("The total investment for games is: "
                 + (game1.getInvestment()
@@ -50,7 +50,7 @@ public class RentManager {
                 + (book1.getInvestment()
                 + book2.getInvestment()
                 + book3.getInvestment()));
-        System.out.println(totalIncome(someProducts));
+        System.out.println("The summarized income from someProducts is: " + sumIncome(someProducts));
 
         System.out.println("\n" + "Book1 ID: " + IdGenerator.generate(book1));
         System.out.println("Book2 ID: " + IdGenerator.generate(book2));
@@ -63,7 +63,7 @@ public class RentManager {
         System.out.println("Movie3 ID: " + IdGenerator.generate(movie3));
     }
 
-    public static int totalIncome (List<Buyable> someProducts) {
+    public static int sumIncome (List<Buyable> someProducts) {
         int totalIncome = 0;
         for(Buyable p : someProducts) {totalIncome += p.getPrice();}
         return totalIncome; }

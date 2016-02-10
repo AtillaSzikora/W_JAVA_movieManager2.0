@@ -28,12 +28,13 @@ public class Game extends Product implements Buyable {
     public void setStaff(List<Person> staff) {
         this.staff = staff;
     }
-    @Override public int getPrice() {
-        return 0;
-    }
     public void setPrice(int price) {
         this.price = price;
     }
+
+    @Override public int getPrice() {
+        if(this.isPreOrdered()) {return price * 8 / 10;}
+        return price; }
 
     @Override public long getInvestment() {
         int salaryOfStaff = 0;

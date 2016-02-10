@@ -46,7 +46,7 @@ public class Movie extends Product implements Buyable {
         this.cast = cast;
     }
     @Override public int getPrice() {
-        return 0;
+        return price;
     }
     public void setPrice(int price) {
         this.price = price;
