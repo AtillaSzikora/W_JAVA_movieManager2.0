@@ -12,22 +12,22 @@ public class RentManager {
 
     public static void main(String[] args) {
 
-        Person alma = new Person("Al", "Ma", Gender.FEMALE, 100);
-        Person korte = new Person("Kor", "Te", Gender.MALE, 200);
-        Person szilva = new Person("Szil", "Va", Gender.FEMALE, 300);
-        Person barack = new Person("Ba", "Rack", Gender.MALE, 400);
-        Person szolo = new Person("Szo", "Lo", Gender.FEMALE, 500);
-        Person meggy = new Person("Me", "Ggy", Gender.MALE, 600);
+        Person jani = new Person("Ja", "Ni", Gender.MALE, 100);
+        Person jozsi = new Person("Jo", "Zsi", Gender.MALE, 200);
+        Person jolan = new Person("Jo", "Lan", Gender.FEMALE, 300);
+        Person jakab = new Person("Ja", "Kab", Gender.MALE, 400);
+        Person juci = new Person("Ju", "Ci", Gender.FEMALE, 500);
+        Person julcsi = new Person("Jul", "Csi", Gender.FEMALE, 600);
 
-        List<Person> book1Author = Arrays.asList(alma);
-        List<Person> book2Author = Arrays.asList(korte);
-        List<Person> book3Author = Arrays.asList(szilva);
-        List<Person> game1Staff = Arrays.asList(alma, korte, szilva, barack);
-        List<Person> game2Staff = Arrays.asList(szilva, barack, szolo, meggy);
-        List<Person> game3Staff = Arrays.asList(korte, szilva, barack, szolo);
-        List<Person> movie1Cast = Arrays.asList(alma, szilva, szolo);
-        List<Person> movie2Cast = Arrays.asList(korte, barack, meggy);
-        List<Person> movie3Cast = Arrays.asList(barack, szolo, meggy);
+        List<Person> book1Author = Arrays.asList(jani);
+        List<Person> book2Author = Arrays.asList(jozsi);
+        List<Person> book3Author = Arrays.asList(jolan);
+        List<Person> game1Staff = Arrays.asList(jani, jozsi, jolan, jakab);
+        List<Person> game2Staff = Arrays.asList(jolan, jakab, juci, julcsi);
+        List<Person> game3Staff = Arrays.asList(jozsi, jolan, jakab, juci);
+        List<Person> movie1Cast = Arrays.asList(jani, jolan, juci);
+        List<Person> movie2Cast = Arrays.asList(jozsi, jakab, julcsi);
+        List<Person> movie3Cast = Arrays.asList(jakab, juci, julcsi);
 
         Product book1 = new Book(book1Author);
         Product book2 = new Book(book2Author);
