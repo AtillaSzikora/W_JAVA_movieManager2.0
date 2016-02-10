@@ -2,10 +2,16 @@ package person;
 
 public class Person {
 
-    String firstName;
-    String lastName;
-    Gender gender;
-    int salary;
+    private String firstName;
+    private String lastName;
+    private Gender gender;
+    private int salary;
+
+    public Person(String firstName, String lastName, Gender gender, int salary) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.salary = salary; }
 
     public String getFirstName() {return firstName;}
     public void setFirstName(String firstName) {this.firstName = firstName;}
