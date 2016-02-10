@@ -36,6 +36,8 @@ public class RentManager {
         Product movie2 = new Movie(Genre.DRAMA, 120, 4, movie2Cast, 550);
         Product movie3 = new Movie(Genre.COMEDY, 100, 2, movie3Cast, 650);
 
+        List<Buyable> someProducts = Arrays.asList(movie1, game1, movie2, game2);
+
         System.out.println("The total investment for games is: "
                 + (game1.getInvestment()
                 + game2.getInvestment()
@@ -48,6 +50,7 @@ public class RentManager {
                 + (book1.getInvestment()
                 + book2.getInvestment()
                 + book3.getInvestment()));
+        System.out.println(totalIncome(someProducts));
 
         System.out.println("\n" + "Book1 ID: " + IdGenerator.generate(book1));
         System.out.println("Book2 ID: " + IdGenerator.generate(book2));
@@ -60,8 +63,8 @@ public class RentManager {
         System.out.println("Movie3 ID: " + IdGenerator.generate(movie3));
     }
 
-    public static int totalIncome (List<Buyable> products) {
+    public static int totalIncome (List<Buyable> someProducts) {
         int totalIncome = 0;
-        for(Buyable p : products) {totalIncome += p.getPrice();}
+        for(Buyable p : someProducts) {totalIncome += p.getPrice();}
         return totalIncome; }
 }
