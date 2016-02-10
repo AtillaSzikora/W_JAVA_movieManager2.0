@@ -3,6 +3,8 @@ package product;
 import person.Person;
 import main.Product;
 
+import java.util.List;
+
 public class Book extends Product {
 
     private Person author;
@@ -11,5 +13,5 @@ public class Book extends Product {
 
     public Person getAuthor() {return author;}
     public void setAuthor(Person author) {this.author = author;}
-    @Override public long getInvestment() {return author.getSalary();}
+    @Override public long getInvestment(List<Person> persons) {return author.getSalary();}
 }

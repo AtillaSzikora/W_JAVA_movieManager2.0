@@ -31,7 +31,7 @@ public class Movie extends Product implements Buyable{
     public void setCast(List<Person> cast) {this.cast = cast;}
     @Override public int getPrice() {return 0;}
     public void setPrice(int price) {this.price = price;}
-    @Override public long getInvestment() {
+    @Override public long getInvestment(List<Person> cast) {
         int salaryOfCast = 0;
         for(Person c : cast) {salaryOfCast += c.getSalary(); }
         return salaryOfCast; }
