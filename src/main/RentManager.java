@@ -19,6 +19,9 @@ public class RentManager {
         Person szolo = new Person("Szo", "Lo", Gender.FEMALE, 500);
         Person meggy = new Person("Me", "Ggy", Gender.MALE, 600);
 
+        List<Person> book1Author = Arrays.asList(alma);
+        List<Person> book2Author = Arrays.asList(korte);
+        List<Person> book3Author = Arrays.asList(szilva);
         List<Person> game1Staff = Arrays.asList(alma, korte, szilva, barack);
         List<Person> game2Staff = Arrays.asList(szilva, barack, szolo, meggy);
         List<Person> game3Staff = Arrays.asList(korte, szilva, barack, szolo);
@@ -26,9 +29,9 @@ public class RentManager {
         List<Person> movie2Cast = Arrays.asList(korte, barack, meggy);
         List<Person> movie3Cast = Arrays.asList(barack, szolo, meggy);
 
-        Product book1 = new Book(alma);
-        Product book2 = new Book(korte);
-        Product book3 = new Book(szilva);
+        Product book1 = new Book(book1Author);
+        Product book2 = new Book(book2Author);
+        Product book3 = new Book(book3Author);
         Product game1 = new Game(true, game1Staff, 150);
         Product game2 = new Game(false, game2Staff, 250);
         Product game3 = new Game(true, game3Staff, 350);
@@ -44,7 +47,10 @@ public class RentManager {
                 + (movie1.getInvestment(movie1Cast)
                 + movie2.getInvestment(movie2Cast)
                 + movie3.getInvestment(movie3Cast)));
-    }
+        System.out.println("The total investment for books is: "
+                + (book1.getInvestment(book1Author)
+                + book2.getInvestment(book2Author)
+                + book3.getInvestment(book3Author))); }
 
     public static int totalIncome (List<Buyable> products) {
         int totalIncome = 0;
