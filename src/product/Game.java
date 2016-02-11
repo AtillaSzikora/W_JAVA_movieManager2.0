@@ -1,5 +1,6 @@
 package product;
 
+import main.IdGenerator;
 import main.Product;
 import main.Buyable;
 import person.Person;
@@ -11,10 +12,12 @@ public class Game extends Product implements Buyable {
     private List<Person> staff;
     private int price;
 
-    public Game(boolean preOrdered, List<Person> staff, int price) {
+    public Game(String title, boolean preOrdered, List<Person> staff, int price) {
+        this.title = title;
         this.preOrdered = preOrdered;
         this.staff = staff;
-        this.price = price; }
+        this.price = price;
+        this.id = IdGenerator.generate(this); }
 
     public boolean isPreOrdered() {
         return true;
@@ -40,4 +43,12 @@ public class Game extends Product implements Buyable {
         int salaryOfStaff = 0;
         for (Person s : this.staff) {salaryOfStaff += s.getSalary();}
         return salaryOfStaff; }
+
+    public String toString() {
+        String strStaff = "";
+        for(Person s : staff) {strStaff += s.getFirstName() + s.getLastName() + ", ";}
+        return "ID: " + this.id + ", " + "title: " + title + "\n"
+                + "preordered: " + preOrdered + "\n"
+                + "staff: " + strStaff + "\n"
+                + "price: " + getPrice() + " USD, " + "investment: " + this.getInvestment() + " USD\n"; }
 }

@@ -4,8 +4,8 @@ import person.Person;
 
 public abstract class Product {
 
-    String id;
-    String title;
+    protected String id;
+    protected String title;
     Person renter;
 
     public String getTitle() {return title;}
